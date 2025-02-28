@@ -29,3 +29,10 @@
     margin: 5px;
     padding: 3px;
 }
+.ctr{
+    text-align: center;
+}
+#deck-container{
+    display: inline-block;
+    margin: 0 auto;
+}
