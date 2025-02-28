@@ -93,7 +93,7 @@
         //check if a card is highlighted, if not make an alert.then filter the hand array to check each card to see if it matches the 
         //index that is stored in the selectedCard variable. then set the selected card to null because it has been deleted
         if(selectedCard !== null){
-          setHand((prevHand) => {prevHand.filter((card,index) => index !== selectedCard);});
+          setHand((prevHand) => {return prevHand.filter((card,index) => index !== selectedCard);});
           setSelectedCard(null);
         }else{
           alert("Select a card by clicking on it before tossing it!");
