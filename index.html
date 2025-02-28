@@ -100,6 +100,24 @@
           return;
         }
        }
+       /*
+       This method will add a wildcard to the displayed hand. The wildcard can be a copy of an existing card.
+       */
+        function wildcard(){
+          //deck length check - can't add a card if deck is empty.
+          // randomly select a card from the cards in the deck and then add that card to the hand array
+          if(deck.length === 0){
+            alert("There aren't any cards left in the deck!");
+            return;
+          }
+          const randomCardIndex = Math.floor(Math.random() * deck.length);
+          console.log(randomCardIndex);
+          const chosenWildCard = deck[randomCardIndex];
+          console.log(chosenWildCard);
+          setHand(prevHand=>[...prevHand, chosenWildCard]);
+        }
+
+   
         //The component view begins here.
         return (
           <div className = "ctr">
@@ -112,7 +130,7 @@
               <button onClick={()=>resetDeck()} className="btn">Reset Deck</button>
               <button onClick={()=>randomizeHand()} className="btn">Regroup Cards</button>
               <button onClick={()=>tossCard()} className = "btn">Toss Highlighted Card</button>
-              <button className = "btn">WILDCARD!</button>
+              <button onClick={()=>wildcard()} className = "btn">WILDCARD!</button>
             </div>
             <div id="hand-container">
               <h2>HAND</h2>
