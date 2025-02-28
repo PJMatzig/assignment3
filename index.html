@@ -53,7 +53,7 @@
             return;
           }
           setHand(deck.slice(0,numberOfCards));
-          setDeck(deck.slice(numberOfCards));
+          setDeck(createDeck());
         }
         //The component view begins here.
         return (
@@ -63,6 +63,7 @@
             </div>
             <div id="button-container">
               <button onClick={()=>dealCards(5)} className="btn">Deal 5 Cards</button>
+
             </div>
             <div id="hand-container">
               <h2>HAND</h2>
