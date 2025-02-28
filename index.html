@@ -11,7 +11,7 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      
+
       //Begin helper functions---------------------------------------------------------------------------------------------------------
 
       /*
@@ -38,7 +38,23 @@
       This function defines the component to be displayed.
       */
       function DeckOfCards(){
-        
+        //Begin variable declarations
+        const [deck, setDeck] = React.useState(createDeck());
+        const [hand, setHand] = React.useState([]);
+
+        //Begin method definitions
+
+        /*
+        This method deals a variable numberOfCards from the top of the deck to the hand.
+        */
+        function dealCards(numberOfCards){
+          if(numberOfCards>deck.length){
+            alert("Not enough cards in the deck!");
+            return;
+          }
+          setHand(deck.slice(0,numberOfCards));
+          setDeck(deck.slice(numberOfCards));
+        }
         //The component view begins here.
         return (
           <div>
