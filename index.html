@@ -59,10 +59,10 @@
         return (
           <div>
             <div id="deck-container">
-              <div id="deck"></div>
+              <div id="deck" onClick={()=>dealCards(1)}></div>
             </div>
             <div id="button-container">
-              <button onClick={()=>dealCards(5)} >Deal 5 Cards</button>
+              <button onClick={()=>dealCards(5)} className="btn">Deal 5 Cards</button>
             </div>
             <div id="hand-container">
               <h2>HAND</h2>
