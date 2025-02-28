@@ -126,7 +126,6 @@
           }
           const randomCardIndex = Math.floor(Math.random() * deck.length);
           const chosenWildCard = deck[randomCardIndex];
-
           setHand(prevHand=>[...prevHand, chosenWildCard]);
         }
         //End method declarations-----------------------------------------------------------------------------------------------------
@@ -154,13 +153,10 @@
           </div>
         );
       }
-   
-
       //Code to render the app to the DOM
       const container = document.getElementById('root');
       const root = ReactDOM.createRoot(container);
       root.render(<DeckOfCards />);
-
     </script>
   </body>
 </html>
