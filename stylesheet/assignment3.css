@@ -1,24 +1,26 @@
 /*"StAuth10244: I Peter-John Matzig, 000926606 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else."
 This css file defines the look and feel of the component.*/
 #deck{
-    height: 100px;
-    width: 50px;
-    background-color: blueviolet;
+    height: 237px;
+    width:  158px;
+    line-height:  237px;
+    background-color: black;
+    color: white;
     margin: 5px;
-    cursor: pointer;
+    cursor: default;
 }
 .card{
-    border: 10px,solid,black;
+    border: 5px,solid,black;
     margin: 5px;
     padding: 5px;
     display: inline-block;
-    height: 100px;
+    height: 150px;
     width:  50px;
     text-align: center;
     line-height: 100px;
 }
 .cardSelected{
-    border: 10px,solid,green;
+    border: 5px,solid,green;
     margin: 5px;
     padding: 5px;
     display: inline-block;
@@ -46,4 +48,6 @@ This css file defines the look and feel of the component.*/
 }
 #card-image{
     margin: 50px;
+    height: 237x;
+    width:  158px;
 }

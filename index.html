@@ -59,6 +59,7 @@
         const [deck, setDeck] = React.useState(createDeck());
         const [hand, setHand] = React.useState([]);
         const [selectedCard, setSelectedCard] = React.useState(null);
+        const [isOutOfCards, setIsOutOfCards] = React.useState(false);
 
         //Begin method definitions----------------------------------------------------------------------------------------------------
 
@@ -66,14 +67,16 @@
         This method deals a variable numberOfCards from the top of the deck to the hand.
         */
         function dealCards(numberOfCards){
-          if(numberOfCards>deck.length){
+          if(numberOfCards>deck.length){            //swap card image in this block after alert is displayed or instead of alert
             alert("Not enough cards in the deck!");
+            setIsOutOfCards(true);
             return;
           }
           if(numberOfCards === 1){
             const newCard = deck.slice(0,numberOfCards);
             setHand(prevHand=>[...prevHand, ...newCard]);
             setDeck(prevDeck=>prevDeck.slice(numberOfCards));
+
           }else{
             resetDeck();
             setHand(deck.slice(0,numberOfCards));
@@ -134,8 +137,7 @@
         return (
           <div className = "ctr">
             <div id="deck-container">
-              {/*<div id="deck" onClick={()=>dealCards(1)}></div>*/}
-              <img id="card-image" src="./images/redcardback.jpg" onClick={()=>dealCards(1)}/>
+              {isOutOfCards ? (<div id="deck">No More Cards!</div>):(<img id="card-image" src="./images/redcardback.jpg" onClick={()=>dealCards(1)}/>)}
             </div>
             <div id="button-container">
               <button onClick={()=>dealCards(5)} className="btn">Deal 5 Cards</button>
