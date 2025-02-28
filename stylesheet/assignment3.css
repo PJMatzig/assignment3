@@ -44,3 +44,6 @@ This css file defines the look and feel of the component.*/
 #hand-container div{
     display: inline-block;
 }
+#card-image{
+    margin: 50px;
+}
