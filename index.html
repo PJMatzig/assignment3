@@ -32,19 +32,27 @@
         //return the deck sorted with a random comparitor to shuffle it.
         return deck.sort(() => Math.random() - 0.5);
       }
+      
       //End helper functions----------------------------------------------------------------------------------------------------------
+     
+      //Begin child component declarations--------------------------------------------------------------------------------------------
+      
       /*
       This function defines a card component.
       */
      function Card(props){
+      //need the card to be displayed, if it is selected and what happens on click event
       return(
         <div>
-          
+          <span className={props.isCardSelected ? "cardSelected":"card"} onClick={props.onClick}>{props.card}</span>
         </div>
       );
      }
-      /*
-      This function defines the component to be displayed.
+
+     //End child component declartations----------------------------------------------------------------------------------------------
+      
+     /*
+      This function defines the parent component to be displayed.
       */
       function DeckOfCards(){
         //Begin variable declarations
@@ -144,6 +152,8 @@
             <div id="hand-container">
               <h2>HAND</h2>
               {hand.map((card,index)=>(
+                //need to pass the card, if it isCardSelected and the onClick to the component
+                //<Card key={index} className={isCardSelected===index} onClick={()=>cardClickHandler(index)>
                 <span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>cardClickHandler(index)}>{card}</span>
               ))}
             </div>
