@@ -30,7 +30,7 @@
           }
         }
         //return the deck sorted with a random comparitor to shuffle it.
-        return deck.sort(()=>Math.random()-0.5);
+        return deck.sort(() => Math.random() - 0.5);
       }
       //End helper functions----------------------------------------------------------------------------------------------------------
       
@@ -53,7 +53,7 @@
             alert("Not enough cards in the deck!");
             return;
           }
-          if(numberOfCards===1){
+          if(numberOfCards === 1){
             const newCard = deck.slice(0,numberOfCards);
             setHand(prevHand=>[...prevHand, ...newCard]);
             setDeck(prevDeck=>prevDeck.slice(numberOfCards));
@@ -75,14 +75,14 @@
         This method toggles the state of the clicked card between highlighted and not highlighted.
         */
         function cardClickHandler(index){
-          setSelectedCard(prevSelectedCard=>prevSelectedCard===index ? null:index);
+          setSelectedCard((prevSelectedCard) => prevSelectedCard === index ? null:index);
         }
         /*
         This method randomizes the order of the cards in the hand array.
         */
         function randomizeHand(){
-          setHand((prevHand)=>{
-            const shuffledHand =[...prevHand].sort(()=>Math.random()-0.5);
+          setHand((prevHand) => {
+            const shuffledHand = [...prevHand].sort(()=>Math.random()-0.5);
             return shuffledHand;
           });
         }
