@@ -54,11 +54,13 @@
           }
           if(numberOfCards===1){
             const newCard = deck.slice(0,numberOfCards);
-            setHand(prevHand=>[...prevHand],[...newCard]);
+            setHand(prevHand=>[...prevHand, ...newCard]);
             setDeck(prevDeck=>prevDeck.slice(numberOfCards));
+          }else{
+            setHand(deck.slice(0,numberOfCards));
+            setDeck(createDeck());
           }
-          setHand(deck.slice(0,numberOfCards));
-          setDeck(createDeck());
+          
         }
         function resetDeck(){
           setHand([]);
