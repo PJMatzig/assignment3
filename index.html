@@ -74,9 +74,18 @@
         /*
         This method toggles the state of the clicked card between highlighted and not highlighted.
         */
-       function cardClickHandler(index){
-        setSelectedCard(prevSelectedCard=>prevSelectedCard===index ? null:index);
-       }
+        function cardClickHandler(index){
+          setSelectedCard(prevSelectedCard=>prevSelectedCard===index ? null:index);
+        }
+        /*
+        This method randomizes the order of the cards in the hand array.
+        */
+        function randomizeHand(){
+          setHand((prevHand)=>{
+            const shuffledHand =[...prevHand].sort(()=>Math.random()-0.5);
+            return shuffledHand;
+          });
+        }
         //The component view begins here.
         return (
           <div>
@@ -87,6 +96,7 @@
               <button onClick={()=>dealCards(5)} className="btn">Deal 5 Cards</button>
               <button onClick={()=>dealCards(7)} className="btn">Deal 7 Cards</button>
               <button onClick={()=>resetDeck()} className="btn">Reset Deck</button>
+              <button onClick={()=>randomizeHand()} className="btn">Randomize Hand</button>
             </div>
             <div id="hand-container">
               <h2>HAND</h2>
