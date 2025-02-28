@@ -4,6 +4,7 @@
     width: 50px;
     background-color: blueviolet;
     margin: 5px;
+    cursor: pointer;
 }
 .card{
     border: 10px,solid,black;
