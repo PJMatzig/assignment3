@@ -153,7 +153,7 @@
               <h2>HAND</h2>
               {hand.map((card,index)=>(
                 //need to pass the card, if it isCardSelected and the onClick to the component
-                <Card key={index} className={isCardSelected===index} onClick={()=>cardClickHandler(index)}/>
+                <Card key={index} card={card} isCardSelected={selectedCard===index} onClick={()=>cardClickHandler(index)}/>
                 //<span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>cardClickHandler(index)}>{card}</span>
               ))}
             </div>
