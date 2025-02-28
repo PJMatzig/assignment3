@@ -60,13 +60,22 @@
           }else{
             setHand(deck.slice(0,numberOfCards));
             setDeck(createDeck());
-          }
-          
+          }          
         }
+        /*
+        This method resets the state of the deck.
+        */
         function resetDeck(){
           setHand([]);
           setDeck(createDeck());
+          setSelectedCard(null);
         }
+        /*
+        This method toggles the state of the clicked card between highlighted and not highlighted.
+        */
+       function cardClickHandler(index){
+        setSelectedCard(prevSelectedCard=>prevSelectedCard===index ? null:index);
+       }
         //The component view begins here.
         return (
           <div>
@@ -81,7 +90,7 @@
             <div id="hand-container">
               <h2>HAND</h2>
               {hand.map((card,index)=>(
-                <span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>setSelectedCard(index)}>{card}</span>
+                <span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>cardClickHandler(index)}>{card}</span>
               ))}
             </div>
           </div>
