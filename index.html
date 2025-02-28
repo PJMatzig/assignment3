@@ -32,7 +32,7 @@
         //return the deck sorted with a random comparitor to shuffle it.
         return deck.sort(() => Math.random() - 0.5);
       }
-      
+
       //End helper functions----------------------------------------------------------------------------------------------------------
      
       //Begin child component declarations--------------------------------------------------------------------------------------------
@@ -153,8 +153,8 @@
               <h2>HAND</h2>
               {hand.map((card,index)=>(
                 //need to pass the card, if it isCardSelected and the onClick to the component
-                //<Card key={index} className={isCardSelected===index} onClick={()=>cardClickHandler(index)>
-                <span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>cardClickHandler(index)}>{card}</span>
+                <Card key={index} className={isCardSelected===index} onClick={()=>cardClickHandler(index)}/>
+                //<span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>cardClickHandler(index)}>{card}</span>
               ))}
             </div>
           </div>
