@@ -33,7 +33,16 @@
         return deck.sort(() => Math.random() - 0.5);
       }
       //End helper functions----------------------------------------------------------------------------------------------------------
-      
+      /*
+      This function defines a card component.
+      */
+     function Card(props){
+      return(
+        <div>
+          
+        </div>
+      );
+     }
       /*
       This function defines the component to be displayed.
       */
@@ -43,7 +52,7 @@
         const [hand, setHand] = React.useState([]);
         const [selectedCard, setSelectedCard] = React.useState(null);
 
-        //Begin method definitions
+        //Begin method definitions----------------------------------------------------------------------------------------------------
 
         /*
         This method deals a variable numberOfCards from the top of the deck to the hand.
@@ -116,7 +125,7 @@
           console.log(chosenWildCard);
           setHand(prevHand=>[...prevHand, chosenWildCard]);
         }
-
+        //End method declarations-----------------------------------------------------------------------------------------------------
    
         //The component view begins here.
         return (
@@ -143,6 +152,7 @@
       }
    
 
+      //Code to render the app to the DOM
       const container = document.getElementById('root');
       const root = ReactDOM.createRoot(container);
       root.render(<DeckOfCards />);
