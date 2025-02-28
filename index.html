@@ -86,6 +86,20 @@
             return shuffledHand;
           });
         }
+        /*
+        This method deletes a selected card.
+        */
+       function tossCard(){
+        //check if a card is highlighted, if not make an alert.then filter the hand array to check each card to see if it matches the 
+        //index that is stored in the selectedCard variable. then set the selected card to null because it has been deleted
+        if(selectedCard !== null){
+          setHand((prevHand) => {prevHand.filter((card,index) => index !== selectedCard);});
+          setSelectedCard(null);
+        }else{
+          alert("Select a card by clicking on it before tossing it!");
+          return;
+        }
+       }
         //The component view begins here.
         return (
           <div>
@@ -97,6 +111,8 @@
               <button onClick={()=>dealCards(7)} className="btn">Deal 7 Cards</button>
               <button onClick={()=>resetDeck()} className="btn">Reset Deck</button>
               <button onClick={()=>randomizeHand()} className="btn">Regroup Cards</button>
+              <button onClick={()=>tossCard()} className = "btn">Toss Highlighted Card</button>
+              <button className = "btn">WILDCARD!</button>
             </div>
             <div id="hand-container">
               <h2>HAND</h2>
