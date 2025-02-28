@@ -41,7 +41,6 @@
       This function defines a card component.
       */
      function Card(props){
-      //need the card to be displayed, if it is selected and what happens on click event
       return(
         <div>
           <span className={props.isCardSelected ? "cardSelected":"card"} onClick={props.onClick}>{props.card}</span>
@@ -107,8 +106,6 @@
         This method deletes a selected card.
         */
        function tossCard(){
-        //check if a card is highlighted, if not make an alert.then filter the hand array to check each card to see if it matches the 
-        //index that is stored in the selectedCard variable. then set the selected card to null because it has been deleted
         if(selectedCard !== null){
           setHand((prevHand) => {return prevHand.filter((card,index) => index !== selectedCard);});
           setSelectedCard(null);
@@ -121,16 +118,13 @@
        This method will add a wildcard to the displayed hand. The wildcard can be a copy of an existing card.
        */
         function wildcard(){
-          //deck length check - can't add a card if deck is empty.
-          // randomly select a card from the cards in the deck and then add that card to the hand array
           if(deck.length === 0){
             alert("There aren't any cards left in the deck!");
             return;
           }
           const randomCardIndex = Math.floor(Math.random() * deck.length);
-          console.log(randomCardIndex);
           const chosenWildCard = deck[randomCardIndex];
-          console.log(chosenWildCard);
+
           setHand(prevHand=>[...prevHand, chosenWildCard]);
         }
         //End method declarations-----------------------------------------------------------------------------------------------------
@@ -152,9 +146,7 @@
             <div id="hand-container">
               <h2>HAND</h2>
               {hand.map((card,index)=>(
-                //need to pass the card, if it isCardSelected and the onClick to the component
                 <Card key={index} card={card} isCardSelected={selectedCard===index} onClick={()=>cardClickHandler(index)}/>
-                //<span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>cardClickHandler(index)}>{card}</span>
               ))}
             </div>
           </div>
