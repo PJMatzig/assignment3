@@ -67,8 +67,7 @@
         This method deals a variable numberOfCards from the top of the deck to the hand.
         */
         function dealCards(numberOfCards){
-          if(numberOfCards>deck.length){            //swap card image in this block after alert is displayed or instead of alert
-            alert("Not enough cards in the deck!");
+          if(numberOfCards>deck.length){     
             setIsOutOfCards(true);
             return;
           }

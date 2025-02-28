@@ -6,7 +6,7 @@ This css file defines the look and feel of the component.*/
     line-height:  237px;
     background-color: black;
     color: white;
-    margin: 5px;
+    margin: 50px;
     cursor: default;
 }
 .card{
