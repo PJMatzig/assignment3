@@ -74,12 +74,11 @@
           if(numberOfCards === 1){
             const newCard = deck.slice(0,numberOfCards);
             setHand(prevHand=>[...prevHand, ...newCard]);
-            setDeck(prevDeck=>prevDeck.slice(numberOfCards));
-
+            setDeck(prevDeck=>prevDeck.slice(numberOfCards));            
           }else{
             resetDeck();
             setHand(deck.slice(0,numberOfCards));
-            setDeck(createDeck());
+            setDeck(createDeck());            
           }          
         }
         /*
@@ -89,6 +88,7 @@
           setHand([]);
           setDeck(createDeck());
           setSelectedCard(null);
+          setIsOutOfCards(false);
         }
         /*
         This method toggles the state of the clicked card between highlighted and not highlighted.
