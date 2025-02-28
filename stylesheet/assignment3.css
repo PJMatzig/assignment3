@@ -36,3 +36,9 @@
     display: inline-block;
     margin: auto;
 }
+#hand-container{
+    text-align: center;
+}
+#hand-container div{
+    display: inline-block;
+}
