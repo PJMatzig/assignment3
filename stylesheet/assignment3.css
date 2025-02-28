@@ -1,1 +1,16 @@
 /* This css file defines the look and feel of the component.*/
+#deck{
+    height: 100px;
+    width: 50px;
+    background-color: blueviolet;
+}
+.card{
+    border: 3px,solid,black;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    height: 100px;
+    width:  50px;
+    text-align: center;
+    line-height: 100px;
+}
