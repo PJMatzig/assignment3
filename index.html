@@ -41,6 +41,7 @@
         //Begin variable declarations
         const [deck, setDeck] = React.useState(createDeck());
         const [hand, setHand] = React.useState([]);
+        const [selectedCard, setSelectedCard] = React.useState(null);
 
         //Begin method definitions
 
@@ -80,7 +81,7 @@
             <div id="hand-container">
               <h2>HAND</h2>
               {hand.map((card,index)=>(
-                <span key={index} className="card">{card}</span>
+                <span key={index} className={selectedCard === index ? "cardSelected":"card"} onClick={()=>setSelectedCard(index)}>{card}</span>
               ))}
             </div>
           </div>
