@@ -76,9 +76,10 @@
             setHand(prevHand=>[...prevHand, ...newCard]);
             setDeck(prevDeck=>prevDeck.slice(numberOfCards));            
           }else{
+            setDeck(createDeck()); 
             resetDeck();
             setHand(deck.slice(0,numberOfCards));
-            setDeck(createDeck());            
+                       
           }          
         }
         /*
